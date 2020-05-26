@@ -1,0 +1,94 @@
+service: serverless-workstations
+
+provider:
+  name: aws
+  stage: ile
+  runtime: nodejs10.x
+  profile: personal
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/users"
+        - "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/messages"
+
+package:
+  include:
+    - ./*.js
+    - ./node_modules
+
+functions:
+  listUsers: #R
+    handler: users/list.list
+    events:
+      - http:
+          path: /users
+          method: get
+          cors: true
+
+  queryUsers:
+    handler: users/query.query
+    events:
+      - http:
+          path: /users/{id}
+          method: get
+          cors: true
+
+  insertUsers: #C
+    handler: users/create.create
+    events:
+      - http:
+          path: /users
+          method: post
+          cors: true
+
+  updateUsers: #C
+    handler: users/update.update
+    events:
+      - http:
+          path: /users/{id}
+          method: PUT
+          cors: true
+
+  deleteUsers: #D
+    handler: users/delete.delete
+    events:
+      - http:
+          path: /users/{id}
+          method: DELETE
+          cors: true
+
+# Here comes the message db stuff
+
+  listMessages: #R
+    handler: messages/list.list
+    events:
+      - http:
+          path: /messages
+          method: get
+          cors: true
+
+  queryMessages:
+    handler: messages/query.query
+    events:
+      - http:
+          path: /messages/{id}
+          method: get
+          cors: true
+
+  insertMessages: #C
+    handler: messages/create.create
+    events:
+      - http:
+          path: /messages
+          method: post
+          cors: true
+
+plugins:
+  - serverless-openapi-documentation
