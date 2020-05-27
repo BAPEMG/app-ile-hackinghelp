@@ -44,7 +44,7 @@ Assim como no aplicativo Couchsurfing, o nosso web app conecta pessoas que tem u
 
 Faça o clone do repositório para sua máquina local
 ```
-git clone git@github.com:BAPEMG/app-ile.git
+git clone git@github.com:BAPEMG/app-ile-hackinghelp.git
 ```
 
 Instale as dependências de desenvolvimento do projeto, abra o terminal na pasta raiz e execute o comando:
