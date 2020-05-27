@@ -21,7 +21,7 @@ Com base em pesquisas realizadas pelo grupo foi possível perceber que houve um 
 
 #### O Produto
 
-Assim como no aplicativo Couchsurfing, o nosso web app conecta pessoas que tem um quarto sobrando, com aquelas que precisam de um lugar para passar a noite.  Com o publico-alvo inchado, essa conexão torna-se mais humanizada, que além de um abrigo pode oferecer apoio emocional por já terem vivenciado situaçōes similares. Também desenvolvemos um chatbot para o Facebook, no qual a pessoa encontra orientaçōes sobre os direitos LGBT e como buscar apoio profissional.
+Assim como no aplicativo Couchsurfing, o nosso web app conecta pessoas que tem um quarto sobrando, com aquelas que precisam de um lugar para passar a noite.  Com o publico-alvo nichado, essa conexão torna-se mais humanizada, que além de um abrigo pode oferecer apoio emocional por já terem vivenciado situaçōes similares. Também desenvolvemos um chatbot para o Facebook, no qual a pessoa encontra orientaçōes sobre os direitos LGBT e como buscar apoio profissional.
 
 #### Protótipo navegável
 
